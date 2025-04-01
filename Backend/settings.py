@@ -108,29 +108,33 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Backend.wsgi.application'
+# WSGI_APPLICATION = 'Backend.wsgi.application'
+WSGI_APPLICATION = 'Backend.wsgi.app'
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.environ['DB_NAME'],
-#         'USER': os.environ['DB_USERNAME'],
-#         'PASSWORD': os.environ['DB_PASSWORD'],
-#         'HOST': os.environ['DB_HOST'],
-#         'PORT': '5432',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'neondb',
+        'USER': 'neondb_owner',
+        'PASSWORD': 'npg_N6KShpnb9JIO',
+        'HOST': 'ep-delicate-feather-a7lhc1aq-pooler.ap-southeast-2.aws.neon.tech',
+        'PORT': '5432',
+        'TEST':{
+            'NAME': 'test_db',
+        }
+    }
+}
 
 SITE_ID = 1
 
